@@ -1,25 +1,25 @@
-# Complete starter seed project for Angular 2
+Email Archive Viewer - инструмент для просмотра email-ов на Angular 2
 
-## Bootstrap Branch
+Список имэйлов берется из email.json файла.
 
-> Featuring Bootstrap 4 and ng-bootstrap, Webpack 2 (and Webpack DLL plugin for faster dev builds), HMR (Hot Module Replacement), and @ngrx for state management.
+Реализовано:
 
-###### You can use npm, but it's recommended to use yarn as it installs a lot faster and has other benefits https://yarnpkg.com/ . Make sure you are using yarn version 0.16.0 or newer (check with 'yarn --version')
+ * Просмотр, фильтрация, поиск
+ * Фильтры по дате и по людям
+ * Текстовый поиск
+ * Пагинация по 20 на странице
+ * Подсветка текста при поиске (subject и body)
+ * Текст исходного письма должен быть свёрнут, как в GMail
+
+# how to launch 
 
 ```bash
-git clone -b bootstrap https://github.com/qdouble/angular-webpack2-starter.git
+git clone https://github.com/ssergienko/Email-Archive-Viewer.git
 cd angular-webpack2-starter
-yarn
-yarn start
+npm i -g yarn
+npm i
+yarn run start:hmr
 ```
-
-### [Material Branch with Universal (Server-side rendering) support](https://github.com/qdouble/angular-webpack2-starter)
-
-### [Material Branch without Universal (Server-side rendering) support](https://github.com/qdouble/angular-webpack2-starter/tree/no-universal-support)
-
-### [Bootstrap and Universal Branch](https://github.com/qdouble/angular-webpack2-starter/tree/bootstrap-and-universal)
-
-### [Minimal Branch](https://github.com/qdouble/angular-webpack2-starter/tree/minimal)
 
 ## Features
 
@@ -44,11 +44,6 @@ yarn start
   * ngrx-store-freeze in dev mode (@ngrx/store meta reducer that prevents state from being mutated.)
 * Karma/Jasmine testing
 * Protractor for E2E testing
-
-## Project Goals
-
-* The main goal is to provide an environment where you can have great dev tools and create a production application without worrying about adding a bunch of stuff yourself.
-* The goal of your design should be so that you can easily copy and paste your app folder and your constants file into to a new update of this project and have it still work. Use constants and have proper separation to make upgrades easy. If you have any suggestions on areas where this starter can be designed to make updates more easy, file an issue.
 
 ## Basic scripts
 
@@ -103,11 +98,3 @@ For unit tests, use `yarn run test` for continuous testing in watch mode and use
 `yarn run test:once` for single test. To view code coverage after running test, open `coverage/html/index.html` in your browser.
 
 For e2e tests, use `yarn run e2e`. To run unit test and e2e test at the same time, use `yarn run ci`.
-
-### Wiki Links
-
-[Recommended Steps for merging this starter into existing project](https://github.com/qdouble/angular-webpack2-starter/wiki/Recommended-Steps-for-Merging-Starter-into-Existing-Project)
-
-### License
-
-[MIT](https://github.com/qdouble/angular-webpack2-starter/blob/bootstrap/LICENSE)
