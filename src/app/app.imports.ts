@@ -11,9 +11,8 @@ import { useLogMonitor } from '@ngrx/store-log-monitor';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { routes } from './app.routing';
 import { rootReducer } from './reducers';
-import { StoreDevToolsModule } from './features/store-devtools.module';
+import { StoreDevToolsModule } from './components/store-devtools/store-devtools.module';
 import { UserEffects } from './user/user.effects';
 
 const STORE_DEV_TOOLS_IMPORTS = [];
@@ -34,10 +33,7 @@ export const APP_IMPORTS = [
   NgbModule.forRoot(),
   ReactiveFormsModule,
   IdlePreloadModule.forRoot(), // forRoot ensures the providers are only created once
-  RouterModule.forRoot(routes, { useHash: false, preloadingStrategy: IdlePreload }),
-  RouterStoreModule.connectRouter(),
   StoreModule.provideStore(rootReducer),
   STORE_DEV_TOOLS_IMPORTS,
   StoreDevToolsModule
 ];
-
