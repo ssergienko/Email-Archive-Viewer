@@ -14,8 +14,8 @@ Email Archive Viewer - инструмент для просмотра email-ов
 # how to launch 
 
 ```bash
-git clone https://github.com/ssergienko/Email-Archive-Viewer.git
-cd angular-webpack2-starter
+git clone https://github.com/ssergienko/email-erchive-viewer.git
+cd email-archive-viewer
 npm i -g yarn
 npm i
 yarn run start:hmr
