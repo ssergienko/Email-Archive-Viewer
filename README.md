@@ -11,10 +11,10 @@ Email Archive Viewer - инструмент для просмотра email-ов
  * Подсветка текста при поиске (subject и body)
  * Текст исходного письма должен быть свёрнут, как в GMail
 
-# how to launch 
+## How to launch 
 
 ```bash
-git clone https://github.com/ssergienko/email-erchive-viewer.git
+git clone https://github.com/ssergienko/email-archive-viewer.git
 cd email-archive-viewer
 npm i -g yarn
 npm i
