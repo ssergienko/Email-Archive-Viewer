@@ -1,32 +1,37 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { EmailsActions } from './ngrx/emails.actions';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { AppState } from '../../root.reducer';
+
+import { AppState } from '../../reducers';
+import { EmailsActions } from '../../actions';
+import { EmailsList } from './emails-list/emails-list.component';
+//import { EmailDetail } from './emails-details/hero-detail.component';
 
 @Component({
   selector: 'emails',
   template: `
-    <ul><li *ngFor="let email of emails">{{email.subject}}</li></ul>
+    <emails-list
+        [emails]="emails | async"
+        [selectedEmail]="selectedEmails"
+        (onSelect)="select($event)"
+    ></emails-list>
   `,
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./emails.component.css']
+  styleUrls: ['./emails.component.css'],
+  providers: [ EmailsList ]
 })
 
-export class EmailsComponent implements OnInit {
-  private emails: any;
+export class Emails {
+  private emails: Observable<any>;
+  selectedEmail;
   constructor (
     private emailsActions: EmailsActions,
     private store: Store<AppState>
   ) {
-    store.select('emails').subscribe( (state)=> {
-      console.log(state);
-      if (Object.prototype.toString.call(state) === '[object Array]') {
-        this.emails = state;
-      }
-    });
+    this.emails = store.select('emails');
   }
-  public ngOnInit() {
-    this.store.dispatch(this.emailsActions.loadEmails());
+  select(email) {
+      console.log(email);
+      this.selectedEmail = email;
   }
 }

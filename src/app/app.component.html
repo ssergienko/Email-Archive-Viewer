@@ -2,19 +2,13 @@
   <header class="header">
 		<h2 class="bd-title" id="my-app-title">Email Archive Viewer</h2>
 	</header>
+  <div class="clearfix"></div>
 	<content class="row">
 		<div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<emails></emails>
+			<router-outlet></router-outlet>
 		</div>
 		<div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
-		<!--<router-outlet (activate)="activateEvent($event)" (deactivate)="deactivateEvent($event)"></router-outlet>
-		<div ngbDropdown id="my-nav-menu">
-			<button class="btn btn-outline-primary" id="dropdownMenu3" ngbDropdownToggle>Navigation Menu</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-				<button *ngFor="let view of views" [routerLink]="view.link" class="dropdown-item">{{view.name}}</button>
-			</div>
-		</div>-->
 	</content>
 </div>
 <footer class="footer">
@@ -22,4 +16,4 @@
     <p>(c) sergey.s.sergienko</p>
   </div>
 </footer>
-<!--<my-store-devtools *ngIf="showMonitor"></my-store-devtools>-->
+<my-store-devtools *ngIf="showMonitor"></my-store-devtools>

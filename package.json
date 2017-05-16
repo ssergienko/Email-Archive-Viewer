@@ -97,6 +97,7 @@
     "ip": "~1.1.5",
     "ngrx-store-freeze": "0.1.9",
     "ngrx-store-logger": "0.1.7",
+    "ngx-pagination": "^3.0.0",
     "rxjs": "~5.3.1",
     "web-animations-js": "^2.2.2",
     "yarn": "^0.23.4",

@@ -1,35 +1,57 @@
 import { ApplicationRef, NgModule } from '@angular/core';
+import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { Store, StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
-import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-
-import { Store } from '@ngrx/store';
-
-import { NotFound404Component } from './components/not-found404.component';
-import { APP_IMPORTS } from './app.imports';
-import { APP_PROVIDERS } from './app.providers';
-
-import { EmailsComponent } from './components/emails/emails.component';
 import { AppComponent } from './app.component';
+import { routing } from './routes';
+import reducer from './reducers';
+import { NotFound404Component } from './components/not-found404.component';
 
-import { AppState } from './root.reducer';
+import { EmailsModule } from './components/emails';
+import { EmailsActions } from './actions';
+import { EmailService } from './services';
+import { EmailsEffects } from './effects';
+
+import { AppState } from './reducers';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevToolsModule } from './components/store-devtools/store-devtools.module';
+import { useLogMonitor } from '@ngrx/store-log-monitor';
+const STORE_DEV_TOOLS_IMPORTS = [];
+if (ENV === 'development' && !AOT &&
+  ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root
+) {
+  STORE_DEV_TOOLS_IMPORTS.push(...[
+    StoreDevtoolsModule.instrumentStore({
+      monitor: useLogMonitor({
+        visible: true,
+        position: 'right'
+      })
+    })
+  ]);
+}
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    HttpModule,
+    EmailsModule,
+    routing,
+    StoreModule.provideStore(reducer),
+    EffectsModule.run(EmailsEffects),
+    STORE_DEV_TOOLS_IMPORTS,
+    StoreDevToolsModule
+  ],
   declarations: [
     AppComponent,
-    EmailsComponent,
-    NotFound404Component
   ],
-  imports: [
-    APP_IMPORTS,
-    BrowserModule,
-    HttpModule
-  ],
-  bootstrap: [AppComponent],
-  providers: [APP_PROVIDERS]
+  providers: [EmailsActions, EmailService],
+  bootstrap: [AppComponent]
 })
-
 export class AppModule {
   constructor(public appRef: ApplicationRef, private _store: Store<AppState>) {}
   hmrOnInit(store) {

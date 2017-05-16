@@ -1,0 +1,12 @@
+<ul class="emails">
+    <li
+        *ngFor="let email of emails"
+        (click)="onSelect.emit(email)"
+        [class.selected]="email === selectedEmail">
+        <span class="emails-element">
+            <span class="from">{{email.from}}</span>
+            <br />
+            <span class="subject">{{email.subject}}</span>
+        </span>
+    </li>
+</ul>

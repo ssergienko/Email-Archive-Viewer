@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { AppState } from './reducers';
+import { EmailsActions } from './actions';
 
 @Component({
   selector: 'my-app',
@@ -6,18 +10,15 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   showMonitor = (ENV === 'development' && !AOT &&
     ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root
   );
-  activateEvent(event) {
-    if (ENV === 'development') {
-      console.log('Activate Event:', event);
-    }
-  }
-  deactivateEvent(event) {
-    if (ENV === 'development') {
-      console.log('Deactivate Event', event);
-    }
+  constructor(
+    private store: Store<AppState>,
+    private emailsActions: EmailsActions
+  ) {}
+  ngOnInit() {
+    this.store.dispatch(this.emailsActions.loadEmails());
   }
 }
