@@ -11,9 +11,9 @@ import { useLogMonitor } from '@ngrx/store-log-monitor';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { rootReducer } from './reducers';
+import { rootReducer } from './root.reducer';
 import { StoreDevToolsModule } from './components/store-devtools/store-devtools.module';
-import { UserEffects } from './user/user.effects';
+import { EmailsEffects } from './components/emails/ngrx/emails.effects';
 
 const STORE_DEV_TOOLS_IMPORTS = [];
 if (ENV === 'development' && !AOT &&
@@ -29,7 +29,7 @@ if (ENV === 'development' && !AOT &&
 
 export const APP_IMPORTS = [
   BrowserAnimationsModule,
-  EffectsModule.run(UserEffects),
+  EffectsModule.run(EmailsEffects),
   NgbModule.forRoot(),
   ReactiveFormsModule,
   IdlePreloadModule.forRoot(), // forRoot ensures the providers are only created once

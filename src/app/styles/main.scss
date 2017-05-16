@@ -9,6 +9,7 @@ html {
 }
 body {
   margin-bottom: 60px;
+  background-color: $bgColor;
 }
 .header {
   width: 100%;
@@ -16,7 +17,7 @@ body {
   background-color: $headerColor;
   color: white;
   text-align: center;
-  padding: 13px; 
+  padding: 13px;
 }
 .footer {
   position: absolute;

@@ -13,8 +13,7 @@ import { APP_PROVIDERS } from './app.providers';
 import { EmailsComponent } from './components/emails/emails.component';
 import { AppComponent } from './app.component';
 
-import { AppState } from './reducers';
-
+import { AppState } from './root.reducer';
 
 @NgModule({
   declarations: [

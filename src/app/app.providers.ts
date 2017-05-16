@@ -1,7 +1,7 @@
-import { UserActions } from './user/user.actions';
-import { UserService } from './user/user.service';
+import { EmailsActions } from './components/emails/ngrx/emails.actions';
+import { EmailsService } from './components/emails/emails.service';
 
 export const APP_PROVIDERS = [
-  UserActions,
-  UserService
+  EmailsActions,
+  EmailsService
 ];

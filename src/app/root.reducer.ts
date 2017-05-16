@@ -2,29 +2,24 @@ import { compose } from '@ngrx/core/compose';
 import { ActionReducer, combineReducers } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';
-import { routerReducer, RouterState } from '@ngrx/router-store';
 
-import * as fromUser from '../user/user.reducer';
+import * as emails from './components/emails/ngrx/emails.reducer';
 
 const modules = {
-  'user': fromUser
+  emails: emails
 };
 
 export interface AppState {
-  router: RouterState;
-  user: fromUser.UserState;
+  emails: emails.EmailsState;
 }
 
 export const syncReducers = {
-  router: routerReducer,
-  user: fromUser.userReducer
+  emails: emails.emailsReducer
 };
 
 const deepCombineReducers = (allReducers: any) => {
   Object.getOwnPropertyNames(allReducers).forEach((prop) => {
-    if (allReducers.hasOwnProperty(prop)
-      && allReducers[prop] !== null
-      && typeof allReducers[prop] !== 'function') {
+    if (allReducers.hasOwnProperty(prop) && allReducers[prop] !== null && typeof allReducers[prop] !== 'function') {
       allReducers[prop] = deepCombineReducers(allReducers[prop]);
     }
   });
@@ -49,7 +44,7 @@ function stateSetter(reducer: ActionReducer<any>): ActionReducer<any> {
 const resetOnLogout = (reducer: Function) => {
   return function (state, action) {
     let newState;
-    if (action.type === '[User] Logout Success') {
+    if (action.type === '[Emails] Logout Success') {
       newState = Object.assign({}, state);
       Object.keys(modules).forEach((key) => {
         newState[key] = modules[key]['initialState'];
