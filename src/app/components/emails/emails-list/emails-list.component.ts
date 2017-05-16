@@ -12,4 +12,12 @@ export class EmailsList {
   @Output() onSelect = new EventEmitter();
   @Output() onDelete = new EventEmitter();
   @Output() pageChange: EventEmitter<number>;
+
+  public filterByName() {
+    console.log('filterByName');
+  }
+  public filterByDate() {
+    console.log('filterByDate');
+  }
+
 }
