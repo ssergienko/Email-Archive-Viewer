@@ -1,0 +1,14 @@
+@import '../../../styles/_colors';
+
+ul.emails {
+  padding: 0;
+  text-align: left;
+  li {
+    height: 70px;
+    background: $emailColor;
+    padding: 5px;
+    border: 1px solid $emailsBorderColor;
+    list-style: none;
+    cursor: pointer;
+  }
+}
