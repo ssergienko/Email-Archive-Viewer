@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {Action} from '@ngrx/store';
+import { Injectable } from '@angular/core';
+import { Action } from '@ngrx/store';
 
-import { Email } from '../email.model'
+import { Email } from '../email.model';
 
 @Injectable()
 export class EmailsActions {

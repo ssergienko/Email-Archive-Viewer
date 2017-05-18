@@ -1,5 +1,7 @@
-import reducer, * as fromEmail from './email/store/email.reducer';
-import { EmailsActions } from './store/emails.actions';
+// @todo: make it working
+
+import reducer, * as fromEmail from './store/email.reducer';
+import { EmailsActions } from '../store/emails.actions';
 
 describe('Email Reducer', () => {
   let actions: EmailsActions;

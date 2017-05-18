@@ -1,5 +1,5 @@
-import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import { Action } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 
 import { Email } from '../email/email.model';
 import { EmailsActions } from './emails.actions';

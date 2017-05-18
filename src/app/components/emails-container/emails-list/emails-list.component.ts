@@ -2,8 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'emails-list',
-  template: require('./emails-list.component.html'),
-  styles: [require('./emails-list.component.css')]
+  templateUrl: './emails-list.component.html',
+  styleUrls: ['./emails-list.component.css']
 })
 export class EmailsList {
   @Input() emails;

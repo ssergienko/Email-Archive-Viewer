@@ -1,7 +1,7 @@
-import {Action} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
-import { Email } from '../email.model'
-import { EmailsActions } from './email.actions'
+import { Email } from '../email.model';
+import { EmailsActions } from './email.actions';
 
 export type EmailState = Email;
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Email } from './email.model';
+import { Email } from './email/email.model';
 
 @Injectable()
 export class EmailService {
