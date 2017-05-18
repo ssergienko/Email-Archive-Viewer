@@ -9,6 +9,7 @@ export class EmailsList {
   @Input() emails;
   @Input() selectedEmail;
   @Input() page;
+  @Input() filterText;
   @Output() onSelect = new EventEmitter();
   @Output() onDelete = new EventEmitter();
 }
