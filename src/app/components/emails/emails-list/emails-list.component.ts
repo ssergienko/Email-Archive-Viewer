@@ -6,18 +6,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styles: [require('./emails-list.component.css')]
 })
 export class EmailsList {
-  p: number = 5;
   @Input() emails;
   @Input() selectedEmail;
+  @Input() page;
   @Output() onSelect = new EventEmitter();
   @Output() onDelete = new EventEmitter();
-  @Output() pageChange: EventEmitter<number>;
-
-  public filterByName() {
-    console.log('filterByName');
-  }
-  public filterByDate() {
-    console.log('filterByDate');
-  }
-
 }

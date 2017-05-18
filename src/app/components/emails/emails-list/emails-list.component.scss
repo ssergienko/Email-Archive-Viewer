@@ -8,10 +8,15 @@ ul.emails {
   padding: 0;
   text-align: left;
   li.filters {
+    margin-bottom: 10px;
     min-height: 45px;
-    a { color: blue; text-decoration: underline; }
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
   }
   li {
+    margin-bottom: 10px;
     min-height: 70px;
     vertical-align: middle;
     background: $emailColor;
@@ -19,8 +24,10 @@ ul.emails {
     border: 1px solid $emailsBorderColor;
     list-style: none;
     cursor: pointer;
-    .emails-element span {
-      margin-right: 150px;
+    .emails-element {
+      .body {
+        padding: 15px 0;
+      }
     }
   }
 }

@@ -1,19 +1,16 @@
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
 <ul class="emails">
-    <li class="filters">
-      <strong>Search: </strong><input type="text" /> /
-      <a (click)="filterByName()">Order by Name From</a> /
-      <a (click)="filterByDate()">Order by Date</a>
-    </li>
-    <li
-        *ngFor="let email of emails | paginate: { itemsPerPage: 20, currentPage: p }"
-        (click)="onSelect.emit(email)"
-        [class.selected]="email === selectedEmail">
-        <div class="emails-element">
-            <div class="from">
-              <strong>From: </strong>{{email.from}}</div>
-            <div class="subject">
-              <strong>Subject: </strong> {{email.subject}}</div>
-        </div>
-    </li>
+  <!--  | paginate: { itemsPerPage: 20, currentPage: p } | searchPipe: { subject: filterText} -->
+  <li *ngFor="let email of emails | paginate: { itemsPerPage: 20, currentPage: page }"
+      (click)="onSelect.emit(email)"
+      [class.selected]="email === selectedEmail">
+    <div class="emails-element">
+      <div class="from">
+        <strong>From: </strong>{{email.from}}
+      </div>
+      <div class="subject">
+        <strong>Subject: </strong> {{email.subject}}
+      </div>
+      <div class="body">{{email.body}}</div>
+    </div>
+  </li>
 </ul>
