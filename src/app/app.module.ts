@@ -8,15 +8,15 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { routing } from './routes';
-import reducer from './reducers';
+import reducer from './store/root.reducer';
 import { NotFound404Component } from './components/not-found404.component';
 
-import { EmailsModule } from './components/emails';
-import { EmailsActions } from './actions';
-import { EmailService } from './services';
-import { EmailsEffects } from './effects';
+import { EmailsModule } from './components/emails-container';
+import { EmailsActions } from './components/emails-container/store/emails.actions';
+import { EmailService } from './components/emails-container/emails.service';
+import { EmailsEffects } from './components/emails-container/store/emails.effects';
 
-import { AppState } from './reducers';
+import { AppState } from './store/root.reducer';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreDevToolsModule } from './components/store-devtools/store-devtools.module';

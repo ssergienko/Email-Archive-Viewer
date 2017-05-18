@@ -2,7 +2,7 @@
 import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 
-import { Emails } from './components/emails/emails.component';
+import { Emails } from './components/emails-container/emails.component';
 
 const routes: Routes = [
     {

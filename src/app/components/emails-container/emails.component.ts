@@ -3,8 +3,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { AppState } from '../../reducers';
-import { EmailsActions } from '../../actions';
+import { AppState } from '../../store/root.reducer';
+import { EmailsActions } from './store/emails.actions';
 import { EmailsList } from './emails-list/emails-list.component';
 //import { EmailDetail } from './emails-details/hero-detail.component';
 
@@ -51,7 +51,8 @@ export class Emails implements OnInit {
       });
   }
   select(email) {
-      this.selectedEmail = email;
+    console.log(email);
+    this.selectedEmail = email;
   }
   pageChanged(page) {
     this.page = page;

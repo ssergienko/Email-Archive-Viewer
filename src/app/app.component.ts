@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { AppState } from './reducers';
-import { EmailsActions } from './actions';
+import { AppState } from './store/root.reducer';
+import { EmailsActions } from './components/emails-container/store/emails.actions';
 
 @Component({
   selector: 'my-app',
