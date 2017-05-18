@@ -95,6 +95,7 @@
     "bootstrap": "4.0.0-alpha.6",
     "core-js": "2.4.1",
     "ip": "~1.1.5",
+    "ng2-order-pipe": "^0.1.4",
     "ngrx-store-freeze": "0.1.9",
     "ngrx-store-logger": "0.1.7",
     "ngx-pagination": "^3.0.0",

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Emails } from './emails.component';
 import { EmailsList } from './emails-list/emails-list.component';
 
+import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
 
@@ -13,7 +14,8 @@ import { SearchPipe } from './search.pipe';
     CommonModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule ],
+    ReactiveFormsModule,
+    Ng2OrderModule ],
   declarations: [ Emails, EmailsList, SearchPipe ],
   exports: [ Emails ],
   providers: []

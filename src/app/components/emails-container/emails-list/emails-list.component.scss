@@ -1,9 +1,5 @@
 @import '../../../styles/_colors';
 
-.ngx-pagination {
-  padding-left: 0;
-  -webkit-padding-start: 0 !important;
-}
 ul.emails {
   padding: 0;
   text-align: left;
@@ -20,10 +16,11 @@ ul.emails {
     min-height: 70px;
     vertical-align: middle;
     background: $emailColor;
-    padding: 10px 50px;
+    padding: 10px 10px;
     border: 1px solid $emailsBorderColor;
     list-style: none;
     cursor: pointer;
+    overflow: hidden;
     .emails-element {
       .body {
         padding: 15px 0;

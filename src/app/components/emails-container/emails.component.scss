@@ -6,4 +6,13 @@ emails {
   .search-by-subject {
     margin-bottom: 10px;
   }
+  .ngx-pagination {
+    padding-left: 0;
+    li {
+      cursor: pointer;
+    }
+  }
+  .filters {
+    margin-bottom: 10px;
+  }
 }

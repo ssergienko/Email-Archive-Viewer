@@ -8,6 +8,6 @@ import { Email } from './email.model';
 export class EmailService {
     constructor (private http: Http) {}
     getEmails(): Observable<Email[]> {
-        return this.http.request('./emails.json').map(res => res.json());
+        return this.http.request('./assets/emails.json').map(res => res.json());
     }
 }

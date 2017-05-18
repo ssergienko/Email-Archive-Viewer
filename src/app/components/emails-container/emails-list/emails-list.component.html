@@ -1,6 +1,5 @@
 <ul class="emails">
-  <!--  | paginate: { itemsPerPage: 20, currentPage: p } | searchPipe: { subject: filterText} -->
-  <li *ngFor="let email of emails | paginate: { itemsPerPage: 20, currentPage: page } | searchFilter: { subject: filterText }"
+  <li *ngFor="let email of emails | paginate: { itemsPerPage: 20, currentPage: page } | searchFilter: { subject: filterText } | orderBy: order"
       (click)="onSelect.emit(email)"
       [class.selected]="email === selectedEmail">
     <div class="emails-element">
@@ -9,6 +8,9 @@
       </div>
       <div class="subject">
         <strong>Subject: </strong> {{email.subject}}
+      </div>
+      <div class="date">
+        <strong>Received at: </strong> {{email.date}}
       </div>
       <div class="body">{{email.body}}</div>
     </div>
