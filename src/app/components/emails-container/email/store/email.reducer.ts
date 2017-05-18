@@ -1,7 +1,7 @@
 import {Action} from '@ngrx/store';
 
-import { Email } from '../email.model';
-import { EmailsActions } from './emails.actions';
+import { Email } from '../email.model'
+import { EmailsActions } from './email.actions'
 
 export type EmailState = Email;
 
@@ -17,7 +17,7 @@ const initialState: EmailState = {
 
 export default function (state = initialState, action: Action): EmailState {
   switch (action.type) {
-    case EmailsActions.LOAD_EMAILS_SUCCESS: {
+    case EmailsActions.HIGHLIGHT_BODY_TEXT_WHEN_SEARCH: {
       return action.payload;
     }
     default: {

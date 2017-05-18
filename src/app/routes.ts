@@ -8,10 +8,6 @@ const routes: Routes = [
     {
         path: '',
         component: Emails
-    },
-    {
-        path: 'page/?',
-        component: Emails
     }
 ];
 

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions } from '@ngrx/effects';
 
-import { AppState } from '../store/root.reducer';
 import { EmailsActions } from './emails.actions';
 import { EmailService } from '../emails.service';
 

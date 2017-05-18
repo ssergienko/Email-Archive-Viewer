@@ -9,7 +9,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './app.component';
 import { routing } from './routes';
 import reducer from './store/root.reducer';
-import { NotFound404Component } from './components/not-found404.component';
 
 import { EmailsModule } from './components/emails-container';
 import { EmailsActions } from './components/emails-container/store/emails.actions';
