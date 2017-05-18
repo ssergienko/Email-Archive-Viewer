@@ -8,10 +8,8 @@ Email Archive Viewer - инструмент для просмотра email-ов
  * Фильтры по дате и по людям
  * Текстовый поиск
  * Пагинация по 20 на странице
- * Подсветка текста при поиске (subject и body)
- * Текст исходного письма должен быть свёрнут, как в GMail
 
-## How to launch 
+## How to launch
 
 ```bash
 git clone https://github.com/ssergienko/email-archive-viewer.git
