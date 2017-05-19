@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { routing } from './routes';
 import reducer from './store/root.reducer';
 
-import { EmailsModule } from './components/emails-container';
+import { EmailsModule } from './components/emails-container/emails.module';
 import { EmailsActions } from './components/emails-container/store/emails.actions';
 import { EmailService } from './components/emails-container/emails.service';
 import { EmailsEffects } from './components/emails-container/store/emails.effects';
