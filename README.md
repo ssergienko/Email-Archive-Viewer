@@ -9,6 +9,8 @@ Email Archive Viewer - инструмент для просмотра email-ов
  * Текстовый поиск
  * Пагинация по 20 на странице
 
+Demo: http://devel.way2day.ru/
+
 ## How to launch
 
 ```bash
