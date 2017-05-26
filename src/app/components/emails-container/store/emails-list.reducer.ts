@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { Email } from '../email/email.model';
+import { Email } from '../emails-list/email/email.model';
 import { EmailsActions } from './emails.actions';
 
 export type EmailsListState = Email[];

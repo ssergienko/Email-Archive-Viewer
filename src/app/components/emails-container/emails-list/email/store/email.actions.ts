@@ -4,11 +4,11 @@ import { Action } from '@ngrx/store';
 import { Email } from '../email.model';
 
 @Injectable()
-export class EmailsActions {
+export class EmailActions {
   static HIGHLIGHT_BODY_TEXT_WHEN_SEARCH = 'Highlight test when user searches';
   highlightText(text): Action {
     return {
-      type: EmailsActions.HIGHLIGHT_BODY_TEXT_WHEN_SEARCH,
+      type: EmailActions.HIGHLIGHT_BODY_TEXT_WHEN_SEARCH,
       payload: text
     };
   }

@@ -1,18 +1,10 @@
 <ul class="emails">
-  <li *ngFor="let email of emails | paginate: { itemsPerPage: 20, currentPage: page } | searchFilter: { subject: filterText } | orderBy: order"
+  <li *ngFor="let email of emails |
+              paginate: { itemsPerPage: 20, currentPage: page } |
+              searchFilter: { subject: filterText } |
+              orderBy: order"
       (click)="onSelect.emit(email)"
       [class.selected]="email === selectedEmail">
-    <div class="emails-element">
-      <div class="from">
-        <strong>From: </strong>{{email.from}}
-      </div>
-      <div class="subject">
-        <strong>Subject: </strong> {{email.subject}}
-      </div>
-      <div class="date">
-        <strong>Received at: </strong> {{email.date}}
-      </div>
-      <div class="body">{{email.body}}</div>
-    </div>
+    <email-component [emaildata]="email"></email-component>
   </li>
 </ul>

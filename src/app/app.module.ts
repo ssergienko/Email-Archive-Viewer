@@ -20,6 +20,7 @@ import { AppState } from './store/root.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreDevToolsModule } from './components/store-devtools/store-devtools.module';
 import { useLogMonitor } from '@ngrx/store-log-monitor';
+
 const STORE_DEV_TOOLS_IMPORTS = [];
 if (ENV === 'development' && !AOT &&
   ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root

@@ -1,14 +1,14 @@
 // @todo: make it working
 
 import reducer, * as fromEmail from './store/email.reducer';
-import { EmailsActions } from '../store/emails.actions';
+import { EmailActions } from './store/email.actions';
 
 describe('Email Reducer', () => {
-  let actions: EmailsActions;
+  let actions: EmailActions;
   let state: fromEmail.EmailState;
 
   beforeEach(() => {
-    actions = new EmailsActions();
+    actions = new EmailActions();
     state = {
       from: 'Test',
       to: ['test 1'],

@@ -6,7 +6,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { AppState } from '../../store/root.reducer';
 import { EmailsActions } from './store/emails.actions';
 import { EmailsList } from './emails-list/emails-list.component';
-import { Email } from './email/email.model';
+import { Email } from './emails-list/email/email.model';
 
 @Component({
   selector: 'emails',
@@ -21,7 +21,7 @@ import { Email } from './email/email.model';
       [formControl]="filterInput" />
     <!-- move filters to component and make friends with store -->
     <div class="filters">
-      <a href="#" (click)="setOrderField($event, 'from')">Order by Name From</a> / 
+      <a href="#" (click)="setOrderField($event, 'from')">Order by Name From</a> /
       <a href="#" (click)="setOrderField($event, 'date')">Order by Date</a>
     </div>
     <emails-list
@@ -38,7 +38,7 @@ import { Email } from './email/email.model';
   providers: [ EmailsList ]
 })
 
-export class Emails implements OnInit {
+export class EmailsContainer implements OnInit {
   public page: number = 5;
   public filterText: string;
   public filterPlaceholder: string;

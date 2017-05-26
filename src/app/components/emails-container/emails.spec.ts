@@ -1,4 +1,4 @@
-import reducer, * as fromEmail from './email/store/email.reducer';
+import reducer, * as fromEmail from './emails-list/email/store/email.reducer';
 import { EmailsActions } from './store/emails.actions';
 
 describe('Email Reducer', () => {
