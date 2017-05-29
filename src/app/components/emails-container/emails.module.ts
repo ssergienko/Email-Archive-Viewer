@@ -17,7 +17,12 @@ import { SearchPipe } from './search.pipe';
     FormsModule,
     ReactiveFormsModule,
     Ng2OrderModule ],
-  declarations: [ EmailsContainer, EmailsList, SearchPipe, EmailComponent ],
+  declarations: [
+    EmailsContainer,
+    EmailsList,
+    SearchPipe,
+    EmailComponent
+  ],
   exports: [ EmailsContainer ],
   providers: []
 })

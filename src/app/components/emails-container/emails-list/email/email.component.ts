@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Email } from './email.model';
 
 @Component({
   selector: 'email-component',
@@ -19,5 +20,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class EmailComponent {
-  @Input() emaildata: any;
+  @Input() emaildata: Email;
 }

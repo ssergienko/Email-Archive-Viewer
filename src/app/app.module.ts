@@ -1,56 +1,37 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
-import { Store, StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+
+import { CoreModule } from './components/core/core.module';
+import { SharedModule } from './components/shared/shared.module';
 
 import { AppComponent } from './app.component';
+
 import { routing } from './routes';
+
+import { AppState } from './store/root.reducer';
 import reducer from './store/root.reducer';
+import { Store, StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { EmailsModule } from './components/emails-container/emails.module';
 import { EmailsActions } from './components/emails-container/store/emails.actions';
 import { EmailService } from './components/emails-container/emails.service';
 import { EmailsEffects } from './components/emails-container/store/emails.effects';
 
-import { AppState } from './store/root.reducer';
-
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { StoreDevToolsModule } from './components/store-devtools/store-devtools.module';
-import { useLogMonitor } from '@ngrx/store-log-monitor';
-
-const STORE_DEV_TOOLS_IMPORTS = [];
-if (ENV === 'development' && !AOT &&
-  ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root
-) {
-  STORE_DEV_TOOLS_IMPORTS.push(...[
-    StoreDevtoolsModule.instrumentStore({
-      monitor: useLogMonitor({
-        visible: true,
-        position: 'right'
-      })
-    })
-  ]);
-}
-
 @NgModule({
   imports: [
-    BrowserModule,
-    HttpModule,
+    CoreModule,
+    SharedModule,
     EmailsModule,
     routing,
     StoreModule.provideStore(reducer),
-    EffectsModule.run(EmailsEffects),
-    STORE_DEV_TOOLS_IMPORTS,
-    StoreDevToolsModule
+    EffectsModule.run(EmailsEffects)
   ],
   declarations: [
     AppComponent,
   ],
-  providers: [EmailsActions, EmailService],
-  bootstrap: [AppComponent]
+  providers: [ EmailsActions, EmailService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
   constructor(public appRef: ApplicationRef, private _store: Store<AppState>) {}
