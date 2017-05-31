@@ -4,19 +4,14 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 import { CoreModule } from './components/core/core.module';
 import { SharedModule } from './components/shared/shared.module';
 
-import { AppComponent } from './app.component';
-
 import { routing } from './routes';
 
+import { AppComponent } from './app.component';
+import { EmailsModule } from './components/emails-container/emails.module';
+
+import { Store, StoreModule } from '@ngrx/store';
 import { AppState } from './store/root.reducer';
 import reducer from './store/root.reducer';
-import { Store, StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-
-import { EmailsModule } from './components/emails-container/emails.module';
-import { EmailsActions } from './components/emails-container/store/emails.actions';
-import { EmailService } from './components/emails-container/emails.service';
-import { EmailsEffects } from './components/emails-container/store/emails.effects';
 
 @NgModule({
   imports: [
@@ -24,13 +19,12 @@ import { EmailsEffects } from './components/emails-container/store/emails.effect
     SharedModule,
     EmailsModule,
     routing,
-    StoreModule.provideStore(reducer),
-    EffectsModule.run(EmailsEffects)
+    StoreModule.provideStore(reducer)
   ],
   declarations: [
     AppComponent,
   ],
-  providers: [ EmailsActions, EmailService ],
+  providers: [  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
