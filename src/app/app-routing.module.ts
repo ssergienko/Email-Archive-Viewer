@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'reviews',
-    loadChildren: './components/emails-container#EmailsModule'
+    loadChildren: './components/reviews#ReviewsModule'
   }
 ];
 

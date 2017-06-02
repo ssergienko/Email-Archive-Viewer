@@ -1,13 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'emails-list',
-  templateUrl: './emails-list.component.html',
-  styleUrls: ['./emails-list.component.css']
+  selector: 'reviews-list',
+  templateUrl: './reviews-list.component.html',
+  styleUrls: ['./reviews-list.component.css']
 })
-export class EmailsList {
-  @Input() emails;
-  @Input() selectedEmail;
+export class ReviewsList {
+  @Input() reviews;
+  @Input() selectedReview;
   @Input() page;
   @Input() filterText;
   @Input() order;

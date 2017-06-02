@@ -7,13 +7,13 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
 
-import { EmailsContainer } from './emails.component';
-import { EmailsList } from './emails-list';
-import { EmailComponent } from './emails-list/email';
+import { ReviewsContainer } from './reviews.component';
+import { ReviewsList } from './reviews-list';
+import { ReviewComponent } from './reviews-list/review';
 
-import { EmailsActions } from './store/emails.actions';
-import { EmailService } from './emails.service';
-import { EmailsEffects } from './store/emails.effects';
+import { ReviewsActions } from './store/reviews.actions';
+import { ReviewService } from './reviews.service';
+import { ReviewsEffects } from './store/reviews.effects';
 
 import { ReviewsRoutingModule } from './reviews-routing.module';
 
@@ -24,16 +24,16 @@ import { ReviewsRoutingModule } from './reviews-routing.module';
     FormsModule,
     ReactiveFormsModule,
     Ng2OrderModule,
-    EffectsModule.run(EmailsEffects),
+    EffectsModule.run(ReviewsEffects),
     ReviewsRoutingModule
   ],
   declarations: [
-    EmailsContainer,
-    EmailsList,
+    ReviewsContainer,
+    ReviewsList,
     SearchPipe,
-    EmailComponent
+    ReviewComponent
   ],
-  exports: [ EmailsContainer ],
-  providers: [ EmailsActions, EmailService ]
+  exports: [ ReviewsContainer ],
+  providers: [ ReviewsActions, ReviewService ]
 })
-export class EmailsModule {}
+export class ReviewsModule {}

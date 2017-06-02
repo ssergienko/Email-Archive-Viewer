@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmailsContainer } from './emails.component';
+import { ReviewsContainer } from './reviews.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: EmailsContainer
+    component: ReviewsContainer
   }
 ];
 

@@ -1,14 +1,12 @@
-// @todo: make it working
+import reducer, * as fromReview from './reviews-list/review/store/review.reducer';
+import { ReviewsActions } from './store/reviews.actions';
 
-import reducer, * as fromEmail from './store/email.reducer';
-import { EmailActions } from './store/email.actions';
-
-describe('Email Reducer', () => {
-  let actions: EmailActions;
-  let state: fromEmail.EmailState;
+describe('Review Reducer', () => {
+  let actions: ReviewsActions;
+  let state: fromReview.ReviewState;
 
   beforeEach(() => {
-    actions = new EmailActions();
+    actions = new ReviewsActions();
     state = {
       from: 'Test',
       to: ['test 1'],

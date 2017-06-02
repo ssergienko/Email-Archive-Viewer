@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 
-import { Email } from '../email.model';
+import { Review } from '../review.model';
 
 @Injectable()
-export class EmailActions {
+export class ReviewActions {
   static HIGHLIGHT_BODY_TEXT_WHEN_SEARCH = 'Highlight test when user searches';
   highlightText(text): Action {
     return {
-      type: EmailActions.HIGHLIGHT_BODY_TEXT_WHEN_SEARCH,
+      type: ReviewActions.HIGHLIGHT_BODY_TEXT_WHEN_SEARCH,
       payload: text
     };
   }

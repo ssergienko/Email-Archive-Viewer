@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Email } from './emails-list/email/email.model';
+import { Review } from './reviews-list/review/review.model';
 
 @Injectable()
-export class EmailService {
+export class ReviewService {
     constructor (private http: Http) {}
-    getEmails(): Observable<Email[]> {
+    getReviews(): Observable<Review[]> {
         return this.http.request('./assets/emails.json').map(res => res.json());
     }
 }

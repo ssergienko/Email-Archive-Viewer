@@ -6,22 +6,22 @@ import { storeFreeze } from 'ngrx-store-freeze';
 
 import * as router from '@ngrx/router-store';
 
-import emailsListReducer, * as fromEmailsList
-  from '../../components/emails-container/store/emails-list.reducer';
+import reviewsListReducer, * as fromReviewsList
+  from '../../components/reviews/store/reviews-list.reducer';
 
 export interface AppState {
   router: router.RouterState;
-  emails: fromEmailsList.EmailsListState;
+  reviews: fromReviewsList.ReviewsListState;
 };
 
 export default compose(combineReducers)({
   router: router.routerReducer,
-  emails: emailsListReducer
+  reviews: reviewsListReducer
 });
 
 const reducers = {
   router: router.routerReducer,
-  emails: emailsListReducer
+  reviews: reviewsListReducer
 };
 
 export function createReducer(asyncReducers = {}): ActionReducer<any> {

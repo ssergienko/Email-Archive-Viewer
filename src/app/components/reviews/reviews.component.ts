@@ -4,12 +4,12 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { AppState } from '../../shared/reducers/root.reducer';
-import { EmailsActions } from './store/emails.actions';
-import { EmailsList } from './emails-list/emails-list.component';
-import { Email } from './emails-list/email/email.model';
+import { ReviewsActions } from './store/reviews.actions';
+import { ReviewsList } from './reviews-list/reviews-list.component';
+import { Review } from './reviews-list/review/review.model';
 
 @Component({
-  selector: 'emails',
+  selector: 'reviews',
   template: `
     <pagination-controls
       (pageChange)="pageChanged($event)"
@@ -24,33 +24,33 @@ import { Email } from './emails-list/email/email.model';
       <a href="#" (click)="setOrderField($event, 'from')">Order by Name From</a> /
       <a href="#" (click)="setOrderField($event, 'date')">Order by Date</a>
     </div>
-    <emails-list
-        [emails]="emails | async"
-        [selectedEmail]="selectedEmail"
+    <reviews-list
+        [reviews]="reviews | async"
+        [selectedReview]="selectedReview"
         (onSelect)="select($event)"
         [page]="page"
         [filterText]="filterText"
         [order]="order"
-    ></emails-list>
+    ></reviews-list>
   `,
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./emails.component.css'],
-  providers: [ EmailsList ]
+  styleUrls: ['./reviews.component.css'],
+  providers: [ ReviewsList ]
 })
 
-export class EmailsContainer implements OnInit {
+export class ReviewsContainer implements OnInit {
   public page: number = 5;
   public filterText: string;
   public filterPlaceholder: string;
   public filterInput = new FormControl();
-  public emails: Observable<any>;
-  public selectedEmail: Email;
+  public reviews: Observable<any>;
+  public selectedReview: Review;
   public order: string = 'date';
   constructor (
-    private emailsActions: EmailsActions,
+    private reviewsActions: ReviewsActions,
     private store: Store<AppState>
   ) {
-    this.emails = store.select('emails');
+    this.reviews = store.select('reviews');
   }
   ngOnInit() {
     this.filterText = '';
@@ -62,9 +62,9 @@ export class EmailsContainer implements OnInit {
         this.filterText = term;
       });
   }
-  select(email) {
-    console.log(email);
-    this.selectedEmail = email;
+  select(review) {
+    console.log(review);
+    this.selectedReview = review;
   }
   pageChanged(page) {
     this.page = page;

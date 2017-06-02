@@ -1,4 +1,4 @@
-export interface Email {
+export interface Review {
   from: string;
   to: string[];
   cc: any[];

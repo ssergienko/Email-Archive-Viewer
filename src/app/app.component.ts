@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from './shared/reducers/root.reducer';
-import { EmailsActions } from './components/emails-container/store/emails.actions';
+import { ReviewsActions } from './components/reviews/store/reviews.actions';
 
 @Component({
   selector: 'my-app',
@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
   );
   constructor(
     private store: Store<AppState>,
-    private emailsActions: EmailsActions
+    private reviewsActions: ReviewsActions
   ) {}
   ngOnInit() {
-    this.store.dispatch(this.emailsActions.loadEmails());
+    this.store.dispatch(this.reviewsActions.loadReviews());
   }
 }

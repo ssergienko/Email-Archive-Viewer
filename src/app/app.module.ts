@@ -8,7 +8,7 @@ import { RouterStoreModule } from '@ngrx/router-store';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { EmailsModule } from './components/emails-container/emails.module';
+import { ReviewsModule } from './components/reviews/reviews.module';
 
 import { Store, StoreModule } from '@ngrx/store';
 import { AppState } from './shared/reducers/root.reducer';
@@ -18,7 +18,7 @@ import { rootReducer } from './shared/reducers/root.reducer';
   imports: [
     CoreModule,
     SharedModule,
-    EmailsModule,
+    ReviewsModule,
     AppRoutingModule,
     StoreModule.provideStore(rootReducer),
     RouterStoreModule.connectRouter(),

@@ -1,6 +1,6 @@
 @import '../../../styles/_colors';
 
-ul.emails {
+ul.reviews {
   padding: 0;
   text-align: left;
   li.filters {
@@ -15,13 +15,13 @@ ul.emails {
     margin-bottom: 10px;
     min-height: 70px;
     vertical-align: middle;
-    background: $emailColor;
+    background: $reviewColor;
     padding: 10px 10px;
-    border: 1px solid $emailsBorderColor;
+    border: 1px solid $reviewsBorderColor;
     list-style: none;
     cursor: pointer;
     overflow: hidden;
-    .emails-element {
+    .reviews-element {
       .body {
         padding: 15px 0;
       }
