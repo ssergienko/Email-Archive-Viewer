@@ -2,24 +2,27 @@ import { ApplicationRef, NgModule } from '@angular/core';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
 import { CoreModule } from './components/core/core.module';
-import { SharedModule } from './components/shared/shared.module';
+import { SharedModule } from './shared/shared.module';
+import { RouterStoreModule } from '@ngrx/router-store';
 
-import { routing } from './routes';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { EmailsModule } from './components/emails-container/emails.module';
 
 import { Store, StoreModule } from '@ngrx/store';
-import { AppState } from './store/root.reducer';
-import reducer from './store/root.reducer';
+import { AppState } from './shared/reducers/root.reducer';
+import { rootReducer } from './shared/reducers/root.reducer';
 
 @NgModule({
   imports: [
     CoreModule,
     SharedModule,
     EmailsModule,
-    routing,
-    StoreModule.provideStore(reducer)
+    AppRoutingModule,
+    StoreModule.provideStore(rootReducer),
+    RouterStoreModule.connectRouter(),
+    SharedModule.forRoot()
   ],
   declarations: [
     AppComponent,

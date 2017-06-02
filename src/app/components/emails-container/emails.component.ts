@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { AppState } from '../../store/root.reducer';
+import { AppState } from '../../shared/reducers/root.reducer';
 import { EmailsActions } from './store/emails.actions';
 import { EmailsList } from './emails-list/emails-list.component';
 import { Email } from './emails-list/email/email.model';

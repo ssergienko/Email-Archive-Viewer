@@ -15,6 +15,8 @@ import { EmailsActions } from './store/emails.actions';
 import { EmailService } from './emails.service';
 import { EmailsEffects } from './store/emails.effects';
 
+import { ReviewsRoutingModule } from './reviews-routing.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { EmailsEffects } from './store/emails.effects';
     FormsModule,
     ReactiveFormsModule,
     Ng2OrderModule,
-    EffectsModule.run(EmailsEffects)
+    EffectsModule.run(EmailsEffects),
+    ReviewsRoutingModule
   ],
   declarations: [
     EmailsContainer,
