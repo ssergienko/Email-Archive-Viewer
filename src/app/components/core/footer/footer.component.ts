@@ -7,12 +7,14 @@ import {
 @Component({
   selector: 'footer',
   encapsulation: ViewEncapsulation.None,
+  template: `
+    <span>
+      <a href="/reviews">Отзывы</a>
+    </span>
+  `,
   styleUrls: [
     './footer.component.css'
-  ],
-  template: `
-    <span></span>
-  `
+  ]
 })
 export class FooterComponent implements OnInit {
   public ngOnInit() {

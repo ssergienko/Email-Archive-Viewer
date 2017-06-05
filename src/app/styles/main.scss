@@ -1,4 +1,4 @@
-@import '_variables';
+@import 'variables';
 
 html, body {
   margin: 0;
@@ -10,15 +10,13 @@ html, body {
   min-height: 100%;
   margin-bottom: -$footerHeight;
   &:after {
-    content: "";
     display: block;
     height: $footerHeight;
   }
   content {
-    padding: 0 10px;
+    display: block;
   }
 }
-
 .container-fluid {
     padding: 0px;
 }
