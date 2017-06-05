@@ -4,8 +4,7 @@ import { ReviewsContainer } from './reviews.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ReviewsContainer
+    path: '', component: ReviewsContainer
   }
 ];
 

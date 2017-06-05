@@ -1,15 +1,21 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'footer',
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: [
+    './footer.component.css'
+  ],
   template: `
-    <div class="footer">
-      <div class="container-fluid">
-        <p>Created by sergey.s.sergienko</p>
-      </div>
-    </div>
-  `,
-  styleUrls: ['./footer.component.css']
+    <span></span>
+  `
 })
-
-export class FooterComponent {}
+export class FooterComponent implements OnInit {
+  public ngOnInit() {
+    console.log('Footer component ngOnInit');
+  }
+}

@@ -1,14 +1,24 @@
-@import 'variables';
-@import 'colors';
+@import '_variables';
 
-html {
-  position: relative;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper {
   min-height: 100%;
-  body {
-    margin-bottom: 60px;
-    background-color: $bgColor;
-    .container-fluid {
-      padding: 0;
-    }
+  margin-bottom: -$footerHeight;
+  &:after {
+    content: "";
+    display: block;
+    height: $footerHeight;
   }
+  content {
+    padding: 0 10px;
+  }
+}
+
+.container-fluid {
+    padding: 0px;
 }

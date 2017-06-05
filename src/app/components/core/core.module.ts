@@ -5,13 +5,13 @@ import {
          Optional,
          SkipSelf } from '@angular/core';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderModule } from './header';
+import { FooterComponent } from './footer';
 
 @NgModule({
-  imports:      [ CommonModule ],
-  declarations: [ HeaderComponent, FooterComponent ],
-  exports:      [ HeaderComponent, FooterComponent ],
+  imports:      [ CommonModule, HeaderModule ],
+  declarations: [ FooterComponent ],
+  exports:      [ FooterComponent, HeaderModule ],
   providers:    [
     // @todo: auth service
   ]
@@ -25,12 +25,11 @@ export class CoreModule {
     }
   }
 
-  /*static forRoot(config: UserServiceConfig): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: [
-        {provide: UserServiceConfig, useValue: config }
-      ]
+      providers: []
     };
-  }*/
+  }
+
 }

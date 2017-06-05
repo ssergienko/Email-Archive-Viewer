@@ -11,27 +11,33 @@ import { Review } from './reviews-list/review/review.model';
 @Component({
   selector: 'reviews',
   template: `
-    <pagination-controls
-      (pageChange)="pageChanged($event)"
-      previousLabel=""
-      nextLabel=""></pagination-controls>
-    <input class="form-control search-by-subject" type="text"
-      [value]="filterText"
-      [placeholder]="filterPlaceholder"
-      [formControl]="filterInput" />
-    <!-- move filters to component and make friends with store -->
-    <div class="filters">
-      <a href="#" (click)="setOrderField($event, 'from')">Order by Name From</a> /
-      <a href="#" (click)="setOrderField($event, 'date')">Order by Date</a>
+    <div class="container-fluid row">
+      <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <pagination-controls
+          (pageChange)="pageChanged($event)"
+          previousLabel=""
+          nextLabel=""></pagination-controls>
+        <input class="form-control search-by-subject" type="text"
+          [value]="filterText"
+          [placeholder]="filterPlaceholder"
+          [formControl]="filterInput" />
+        <!-- move filters to component and make friends with store -->
+        <div class="filters">
+          <a href="#" (click)="setOrderField($event, 'from')">Order by Name From</a> /
+          <a href="#" (click)="setOrderField($event, 'date')">Order by Date</a>
+        </div>
+        <reviews-list
+          [reviews]="reviews | async"
+          [selectedReview]="selectedReview"
+          (onSelect)="select($event)"
+          [page]="page"
+          [filterText]="filterText"
+          [order]="order"
+        ></reviews-list>
+      </div>
+      <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
     </div>
-    <reviews-list
-        [reviews]="reviews | async"
-        [selectedReview]="selectedReview"
-        (onSelect)="select($event)"
-        [page]="page"
-        [filterText]="filterText"
-        [order]="order"
-    ></reviews-list>
   `,
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./reviews.component.css'],
@@ -61,6 +67,7 @@ export class ReviewsContainer implements OnInit {
       .subscribe(term => {
         this.filterText = term;
       });
+    this.store.dispatch(this.reviewsActions.loadReviews());
   }
   select(review) {
     console.log(review);

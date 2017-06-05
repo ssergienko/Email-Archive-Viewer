@@ -1,4 +1,21 @@
 @import '../../../styles/_colors';
+@import '../../../styles/_variables';
+
+.header {
+  position: relative;
+  margin: 0;
+  height: $headerHeight;
+  width: 100%;
+  background-color: $headerColor;
+  .shop-logo {
+    padding: 10px 0;
+    a {
+      color: $textColorOnDark;
+      font-size: 32px;
+      decoration: none;
+    }
+  }
+}
 
 .header {
   width: 100%;

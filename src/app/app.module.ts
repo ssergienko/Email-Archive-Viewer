@@ -4,11 +4,8 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 import { CoreModule } from './components/core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterStoreModule } from '@ngrx/router-store';
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import { ReviewsModule } from './components/reviews/reviews.module';
 
 import { Store, StoreModule } from '@ngrx/store';
 import { AppState } from './shared/reducers/root.reducer';
@@ -16,22 +13,19 @@ import { rootReducer } from './shared/reducers/root.reducer';
 
 @NgModule({
   imports: [
-    CoreModule,
-    SharedModule,
-    ReviewsModule,
     AppRoutingModule,
+    CoreModule.forRoot(),
     StoreModule.provideStore(rootReducer),
     RouterStoreModule.connectRouter(),
     SharedModule.forRoot()
   ],
-  declarations: [
-    AppComponent,
-  ],
-  providers: [  ],
-  bootstrap: [ AppComponent ]
+  declarations: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(public appRef: ApplicationRef, private _store: Store<AppState>) {}
+
   hmrOnInit(store) {
     if (!store || !store.rootState) return;
     if (store.rootState) {
@@ -55,4 +49,5 @@ export class AppModule {
     store.disposeOldHosts();
     delete store.disposeOldHosts;
   }
+
 }

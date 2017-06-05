@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'header',
@@ -10,4 +10,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent {}
+export class HeaderComponent implements OnInit {
+  public ngOnInit() {
+    console.log('Header component ngOnInit');
+  }
+}
