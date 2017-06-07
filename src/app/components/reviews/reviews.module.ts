@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 
-import { Ng2OrderModule } from 'ng2-order-pipe';
+// import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
 
@@ -23,7 +23,7 @@ import { ReviewsRoutingModule } from './reviews-routing.module';
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2OrderModule,
+    // Ng2OrderModule,
     EffectsModule.run(ReviewsEffects),
     ReviewsRoutingModule
   ],

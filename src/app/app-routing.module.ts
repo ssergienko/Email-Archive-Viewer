@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'reviews',
     loadChildren: './components/reviews#ReviewsModule'
+  },
+  {
+    path: 'callback',
+    loadChildren: './components/callback#CallbackModule'
   }
 ];
 

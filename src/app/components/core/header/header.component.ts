@@ -10,13 +10,16 @@ import { Component, Input, OnInit } from '@angular/core';
         </h2>
       </div>
       <div class="col-lg-8"></div>
-      <div class="col-lg-2"></div>
+      <div class="col-lg-2">
+        <auth></auth>
+      </div>
     </div>
   `,
   styleUrls: ['./header.component.css']
 })
 
 export class HeaderComponent implements OnInit {
+  constructor() {}
   public ngOnInit() {
     console.log('Header component ngOnInit');
   }

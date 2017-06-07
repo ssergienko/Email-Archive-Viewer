@@ -7,11 +7,12 @@ import {
 
 import { HeaderModule } from './header';
 import { FooterComponent } from './footer';
+import { AuthModule } from './header/auth';
 
 @NgModule({
-  imports:      [ CommonModule, HeaderModule ],
+  imports:      [ CommonModule, HeaderModule, AuthModule ],
   declarations: [ FooterComponent ],
-  exports:      [ FooterComponent, HeaderModule ],
+  exports:      [ FooterComponent, HeaderModule, AuthModule ],
   providers:    [
     // @todo: auth service
   ]

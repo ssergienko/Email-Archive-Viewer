@@ -10,10 +10,12 @@ import { StoreDevToolsModule } from './components/store-devtools/store-devtools.
     CommonModule,
     BrowserModule,
     HttpModule,
-    StoreDevToolsModule ],
+    StoreDevToolsModule
+  ],
   declarations: [],
   exports: [ CommonModule, FormsModule ]
 })
+
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {

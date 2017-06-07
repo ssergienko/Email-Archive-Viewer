@@ -1,8 +1,7 @@
 <ul class="reviews">
   <li *ngFor="let review of reviews |
               paginate: { itemsPerPage: 20, currentPage: page } |
-              searchFilter: { subject: filterText } |
-              orderBy: order"
+              searchFilter: { subject: filterText }"
       (click)="onSelect.emit(review)"
       [class.selected]="review === selectedReview">
     <review-component [reviewdata]="review"></review-component>

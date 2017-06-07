@@ -1,3 +1,4 @@
+import { AuthModule } from './auth';
 import { HeaderComponent } from './header.component';
 import { NgModule } from '@angular/core';
 
@@ -5,7 +6,7 @@ import { NgModule } from '@angular/core';
   declarations: [
     HeaderComponent
   ],
-  imports: [],
+  imports: [AuthModule],
   providers: [],
   exports: [HeaderComponent]
 })

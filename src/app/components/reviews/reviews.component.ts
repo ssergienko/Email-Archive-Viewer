@@ -23,17 +23,16 @@ import { Review } from './reviews-list/review/review.model';
           [placeholder]="filterPlaceholder"
           [formControl]="filterInput" />
         <!-- move filters to component and make friends with store -->
-        <div class="filters">
+        <!--<div class="filters">
           <a href="#" (click)="setOrderField($event, 'from')">Order by Name From</a> /
           <a href="#" (click)="setOrderField($event, 'date')">Order by Date</a>
-        </div>
+        </div>-->
         <reviews-list
           [reviews]="reviews | async"
           [selectedReview]="selectedReview"
           (onSelect)="select($event)"
           [page]="page"
           [filterText]="filterText"
-          [order]="order"
         ></reviews-list>
       </div>
       <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
